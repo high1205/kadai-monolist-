@@ -10,6 +10,7 @@
           <div class="buttons text-center">
             <% if logged_in? %>
               <%= render 'ownerships/want_button', item: @item %>
+              <%= render 'ownerships/have_button', item: @item %>
             <% end %>
           </div>
         </div>
@@ -21,7 +22,7 @@
     <div class="want-users">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
-          Wantしたユーザ
+          希望リストに入れたユーザ
         </div>
         <div class="panel-body">
           <% @want_users.each do |user| %>
@@ -33,9 +34,12 @@
     <div class="have-users">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
-          Haveしたユーザ
+          既保有リストに入れたユーザ
         </div>
         <div class="panel-body">
+          <% @have_users.each do |user| %>
+            <%= link_to user.name, user_path(user) %>
+          <% end %>
         </div>
       </div>
     </div>

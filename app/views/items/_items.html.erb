@@ -16,8 +16,14 @@
               <div class="buttons text-center">
                 <% if logged_in? %>
                   <%= render 'ownerships/want_button', item: item %>
+                  <%= render 'ownerships/have_button', item: item %>
                 <% end %>
               </div>
+              <!--<div class="buttons text-right">-->
+              <!--  <% if logged_in? %>-->
+              <!--    <%= render 'ownerships/have_button', item: item %>-->
+              <!--  <% end %>-->
+              <!--</div>-->
             </div>
           </div>
         </div>
